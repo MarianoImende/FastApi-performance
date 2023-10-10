@@ -3,7 +3,7 @@ import locale
 
 # Establecer la configuración regional para el formato de dinero (por ejemplo, es-ES para español)
 #locale.setlocale(locale.LC_ALL, 'es-AR')
-locale.setlocale(locale.LC_ALL, 'es_ES')
+#locale.setlocale(locale.LC_ALL, 'es_ES')
 
 # Función para generar un JSON con un saldo aleatorio en formato de dinero
 def generar_json_saldo():
