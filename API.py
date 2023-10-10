@@ -32,7 +32,7 @@ async def login(request: Request):
     return json_generado
 
 @app.post('/billetera/redlink/logout')
-async def ultmovimientos():
+async def logout():
     global request_count  # Accede a la variable global
     request_count += 1  # Incrementar el conteo de solicitudes
     base_delay = 0.01  # Tiempo de demora inicial en segundos
