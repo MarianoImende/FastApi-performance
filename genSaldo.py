@@ -1,5 +1,8 @@
 import random
 from babel.numbers import format_currency
+import locale
+
+# Resto de tu código aquí...
 
 locale.setlocale(locale.LC_ALL, 'C.UTF-8')
 
