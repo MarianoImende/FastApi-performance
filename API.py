@@ -17,7 +17,7 @@ app = FastAPI()
 # Variable para realizar un seguimiento del número de solicitudes
 request_count = 0
 
-@app.post('/billetera/redlink/login')
+@app.post('/billetera/login')
 async def login(request: Request):
       
     global request_count  # Accede a la variable global, es la que esta afuera.
@@ -31,7 +31,7 @@ async def login(request: Request):
     json_generado = generar_json_tarjetas()
     return json_generado
 
-@app.post('/billetera/redlink/logout')
+@app.post('/billetera/logout')
 async def logout():
     global request_count  # Accede a la variable global
     request_count += 1  # Incrementar el conteo de solicitudes
@@ -44,7 +44,7 @@ async def logout():
     #raise HTTPException(status_code=500, detail="Error interno del servidor")
     return {"message": "Has cerrado sesion exitosamente"}
 
-@app.post("/billetera/redlink/cuentas")
+@app.post("/billetera/cuentas")
 async def cuentas():
     global request_count  # Accede a la variable global
     request_count += 1  # Incrementar el conteo de solicitudes
@@ -60,7 +60,7 @@ async def cuentas():
 
     
 
-@app.post('/billetera/redlink/saldo')
+@app.post('/billetera/saldo')
 async def saldo(request: Request):
     global request_count  # Accede a la variable global
     request_count += 1  # Incrementar el conteo de solicitudes
@@ -75,7 +75,7 @@ async def saldo(request: Request):
     #body = {"tarjetas":[{"numero":"125055111609","descripcion":"BANCO BICA"},{"numero":"736200459801","descripcion":"BANCO DE SALTA"},{"numero":"872000234502","descripcion":"BANCO LIBRE"}]}
     return json_generado
 
-@app.post('/billetera/redlink/ultmovimientos')
+@app.post('/billetera/ultmovimientos')
 async def ultmovimientos(fecha_desde: str,fecha_hasta: str):
     global request_count  # Accede a la variable global
     request_count += 1  # Incrementar el conteo de solicitudes
